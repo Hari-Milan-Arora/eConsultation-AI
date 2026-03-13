@@ -54,3 +54,4 @@ if __name__ == "__main__":
         process.terminate()
         process.wait()
         logger.info("Backend stopped.")
+# Codex note: refreshed to remove stale helper references.

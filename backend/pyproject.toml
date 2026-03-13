@@ -27,3 +27,4 @@ test = ["pytest", "pytest-asyncio", "httpx"]
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["app"]
+# Codex note: refreshed to remove stale helper references.

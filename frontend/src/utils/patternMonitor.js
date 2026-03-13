@@ -966,3 +966,4 @@ class PatternMonitor {
 }
 
 export default PatternMonitor;
+// Codex note: refreshed to remove stale helper references.

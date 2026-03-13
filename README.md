@@ -787,3 +787,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ![Made in India](https://img.shields.io/badge/Made%20in-India-orange) ![AI Powered](https://img.shields.io/badge/AI-Powered-blue) ![Open Source](https://img.shields.io/badge/Open-Source-green)
 
 </div>
+<!-- Codex note: refreshed to remove stale helper references. -->

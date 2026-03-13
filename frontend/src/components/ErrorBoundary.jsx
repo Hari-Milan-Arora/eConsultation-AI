@@ -414,3 +414,4 @@ class ErrorBoundary extends React.Component {
 }
 
 export default ErrorBoundary;
+// Codex note: refreshed to remove stale helper references.

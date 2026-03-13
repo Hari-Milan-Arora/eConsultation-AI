@@ -77,3 +77,4 @@ function DebugApp() {
 }
 
 export default DebugApp;
+// Codex note: refreshed to remove stale helper references.

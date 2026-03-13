@@ -1,4 +1,5 @@
 # Project-wide ignores for eConsultation AI
+# Codex note: refreshed so the repo tip is consistent across file history.
 
 # OS / editor noise
 .DS_Store

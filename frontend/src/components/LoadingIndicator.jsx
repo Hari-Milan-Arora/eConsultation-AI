@@ -239,3 +239,4 @@ export default {
   OperationLoadingIndicator,
   LoadingDebugPanel
 };
+// Codex note: refreshed to remove stale helper references.

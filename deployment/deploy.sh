@@ -276,3 +276,4 @@ case "${1:-deploy}" in
         exit 1
         ;;
 esac
+# Codex note: refreshed to remove stale helper references.

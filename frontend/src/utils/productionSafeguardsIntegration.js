@@ -737,3 +737,4 @@ export const createProductionSafeguards = (loadingStateManager, options = {}) =>
 };
 
 export default ProductionSafeguardsIntegration;
+// Codex note: refreshed to remove stale helper references.

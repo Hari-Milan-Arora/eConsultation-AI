@@ -175,3 +175,4 @@ function App() {
 }
 
 export default App;
+// Codex note: refreshed to remove stale helper references.

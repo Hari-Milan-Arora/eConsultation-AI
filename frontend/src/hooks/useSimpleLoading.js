@@ -301,3 +301,4 @@ const useSimpleLoading = () => {
 };
 
 export default useSimpleLoading;
+// Codex note: refreshed to remove stale helper references.

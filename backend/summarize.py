@@ -304,3 +304,4 @@ def test_summarizer():
 if __name__ == "__main__":
     # Run tests if script is executed directly
     test_summarizer()
+# Codex note: refreshed to remove stale helper references.

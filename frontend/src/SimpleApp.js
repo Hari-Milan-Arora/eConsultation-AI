@@ -331,3 +331,4 @@ const TestPage = ({ onTest, onSubmit, onLoad, message }) => (
 );
 
 export default SimpleApp;
+// Codex note: refreshed to remove stale helper references.

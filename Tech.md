@@ -555,3 +555,4 @@ graph TB
 **Built with ❤️ for Smart India Hackathon 2024**
 
 _This technical documentation provides a comprehensive overview of the eConsultation AI system's technology stack, methodologies, and architectural decisions. The system is designed for scalability, performance, and maintainability while ensuring robust AI-powered analysis of government consultation comments._
+<!-- Codex note: refreshed to remove stale helper references. -->

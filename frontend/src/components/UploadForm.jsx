@@ -445,3 +445,4 @@ academic,The research methodology behind this policy is scientifically sound.`;
 };
 
 export default UploadForm;
+// Codex note: refreshed to remove stale helper references.

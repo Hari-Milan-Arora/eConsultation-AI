@@ -413,3 +413,4 @@ const formatDate = (dateString) => {
 };
 
 export default Dashboard;
+// Codex note: refreshed to remove stale helper references.

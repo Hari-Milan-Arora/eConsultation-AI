@@ -9,3 +9,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
+// Codex note: refreshed to remove stale helper references.

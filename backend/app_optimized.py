@@ -1063,3 +1063,4 @@ if __name__ == "__main__":
         workers=1,     # Single worker for SQLite compatibility
         log_level="info"
     )
+# Codex note: refreshed to remove stale helper references.

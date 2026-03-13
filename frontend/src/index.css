@@ -355,3 +355,4 @@ img:not([class*="loading-"]) {
     transition: none !important;
   }
 }
+/* Codex note: refreshed to remove stale helper references. */

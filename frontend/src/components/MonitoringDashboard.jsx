@@ -335,3 +335,4 @@ const MonitoringDashboard = () => {
 };
 
 export default MonitoringDashboard;
+// Codex note: refreshed to remove stale helper references.

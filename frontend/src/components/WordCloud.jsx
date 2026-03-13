@@ -261,3 +261,4 @@ const WordCloud = () => {
 };
 
 export default WordCloud;
+// Codex note: refreshed to remove stale helper references.

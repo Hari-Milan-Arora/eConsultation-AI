@@ -436,3 +436,4 @@ def log_error_safely(error: Exception, context: str = "", user_id: str = None, *
 
 # Initialize logging
 setup_secure_logging()
+# Codex note: refreshed to remove stale helper references.

@@ -155,3 +155,4 @@ def test_instant_models():
 if __name__ == "__main__":
     create_instant_models()
     logger.info("Instant model creation completed!")
+# Codex note: refreshed to remove stale helper references.

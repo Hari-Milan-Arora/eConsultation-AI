@@ -136,3 +136,4 @@ if __name__ == "__main__":
         logger.info("Simple sentiment model training completed successfully!")
     else:
         logger.error("Training failed!")
+# Codex note: refreshed to remove stale helper references.

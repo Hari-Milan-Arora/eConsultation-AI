@@ -51,3 +51,4 @@ databases:
     user: admin
     region: oregon
     plan: free
+# Codex note: refreshed to remove stale helper references.

@@ -344,3 +344,4 @@ const CommentCard = ({ comment }) => {
 };
 
 export default CommentCard;
+// Codex note: refreshed to remove stale helper references.

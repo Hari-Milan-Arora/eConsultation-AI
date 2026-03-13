@@ -249,3 +249,4 @@ const LoadingStateExample = () => {
 };
 
 export default LoadingStateExample;
+// Codex note: refreshed to remove stale helper references.

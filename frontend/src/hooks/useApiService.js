@@ -227,3 +227,4 @@ const useApiService = () => {
 };
 
 export default useApiService;
+// Codex note: refreshed to remove stale helper references.

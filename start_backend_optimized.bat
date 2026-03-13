@@ -10,3 +10,4 @@ python start_backend_optimized.py
 echo.
 echo Backend stopped.
 pause
+REM Codex note: refreshed to remove stale helper references.

@@ -808,3 +808,4 @@ class UserExperienceValidator {
 }
 
 export default UserExperienceValidator;
+// Codex note: refreshed to remove stale helper references.

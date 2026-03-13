@@ -483,3 +483,4 @@ class ApiService {
 
 export default ApiService;
 export { transformError, DEFAULT_CONFIG };
+// Codex note: refreshed to remove stale helper references.

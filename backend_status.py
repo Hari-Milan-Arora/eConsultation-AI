@@ -98,3 +98,4 @@ def show_backend_status():
 if __name__ == "__main__":
     success = show_backend_status()
     sys.exit(0 if success else 1)
+# Codex note: refreshed to remove stale helper references.

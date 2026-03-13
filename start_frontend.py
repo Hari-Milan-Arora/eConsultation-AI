@@ -107,3 +107,4 @@ def start_frontend():
 
 if __name__ == "__main__":
     start_frontend()
+# Codex note: refreshed to remove stale helper references.

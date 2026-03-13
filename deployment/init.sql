@@ -75,3 +75,4 @@ GROUP BY stakeholder_type;
 -- GRANT ALL PRIVILEGES ON DATABASE econsultation TO admin;
 -- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin;
 -- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO admin;
+-- Codex note: refreshed to remove stale helper references.

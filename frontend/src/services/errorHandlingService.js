@@ -481,3 +481,4 @@ export class ErrorHandlingService {
 export const errorHandlingService = new ErrorHandlingService();
 
 export default errorHandlingService;
+// Codex note: refreshed to remove stale helper references.

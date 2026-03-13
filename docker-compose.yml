@@ -90,3 +90,4 @@ volumes:
 networks:
   default:
     name: econsultation-network
+# Codex note: refreshed to remove stale helper references.

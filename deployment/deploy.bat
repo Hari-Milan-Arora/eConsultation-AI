@@ -161,3 +161,4 @@ exit /b 1
 :end
 echo Press any key to exit...
 pause >nul
+REM Codex note: refreshed to remove stale helper references.

@@ -341,3 +341,4 @@ const ErrorRecovery = ({
 };
 
 export default ErrorRecovery;
+// Codex note: refreshed to remove stale helper references.

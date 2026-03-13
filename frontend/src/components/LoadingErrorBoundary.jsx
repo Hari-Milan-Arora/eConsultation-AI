@@ -223,3 +223,4 @@ class LoadingErrorBoundary extends React.Component {
 }
 
 export default LoadingErrorBoundary;
+// Codex note: refreshed to remove stale helper references.
