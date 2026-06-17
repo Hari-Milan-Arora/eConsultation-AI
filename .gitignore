@@ -1,0 +1,94 @@
+# Project-wide ignores for eConsultation AI
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+
+# Node / frontend
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+.parcel-cache/
+
+# Logs and temporary files
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# Generated backend / model artifacts
+backend/simple_results/
+backend/models/
+backend/wordclouds/
+backend/eConsultation.db
+eConsultation.db
+backend/tests/.pytest_cache/
+backend/tests/__pycache__/
+*.db
+*.sqlite
+*.sqlite3
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Generated reports / test output
+test-results/
+test-reports/
+performance_results/
+benchmark_results/
+backend/*.json
+frontend/*.json
+frontend/src/**/*.test.js
+frontend/src/**/__tests__/
+
+# Deployment / packaging output
+dist/
+build/
+out/
+
+# Repo cleanup leftovers
+clean-repo/
+data/
+models/
+deployment_readiness_checklist.json
+final_integration_test_report.json
+performance_test_report_*.json
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+!.env.template
