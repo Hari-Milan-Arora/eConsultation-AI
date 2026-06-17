@@ -1,0 +1,53 @@
+services:
+  # Backend API Service
+  - type: web
+    name: econsultation-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: |
+      cd backend
+      pip install -r requirements.txt
+      python instant_train.py
+    startCommand: |
+      cd backend
+      python -m uvicorn app_optimized:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: econsultation-db
+          property: connectionString
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: https://econsultation-frontend.onrender.com
+    healthCheckPath: /health
+
+  # Frontend Service
+  - type: web
+    name: econsultation-frontend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: |
+      cd frontend
+      npm ci
+      npm run build
+    startCommand: |
+      cd frontend
+      npm install -g serve
+      serve -s build -p $PORT
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: REACT_APP_API_URL
+        value: https://econsultation-backend.onrender.com
+
+databases:
+  - name: econsultation-db
+    databaseName: econsultation
+    user: admin
+    region: oregon
+    plan: free

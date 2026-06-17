@@ -1,0 +1,357 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * eConsultation AI - Zero-Automatic-Loading CSS Architecture
+ * 
+ * This CSS file implements a controlled loading system that prevents any
+ * automatic loading indicators or animations from appearing without explicit
+ * React state control.
+ * 
+ * Key Principles:
+ * 1. No global transitions that could cause loading-like visual effects
+ * 2. All loading animations require explicit activation via React state
+ * 3. Tailwind's default animations are disabled and only enabled when controlled
+ * 4. Loading states are isolated to specific CSS classes with "-active" suffix
+ * 
+ * Loading Control Classes:
+ * - .loading-spinner-active: Controlled spinning animation
+ * - .loading-skeleton-active: Controlled skeleton loading animation
+ * - .loading-shimmer-active: Controlled shimmer effect
+ * - .loading-fade-active: Controlled fade-in animation
+ * - .loading-slide-active: Controlled slide-up animation
+ * - .loading-pulse-active: Controlled pulse animation
+ * - .loading-bounce-active: Controlled bounce animation
+ * - .loading-button-active: Controlled button loading state
+ * - .loading-text-active: Controlled text loading with dots
+ * - .loading-overlay-active: Controlled full-screen loading overlay
+ * - .loading-input-active: Controlled form input loading state
+ * - .loading-select-active: Controlled select loading state
+ * - .loading-textarea-active: Controlled textarea loading state
+ * 
+ * Usage:
+ * - Only apply loading classes when React state explicitly enables them
+ * - Never use Tailwind's default animate-* classes directly
+ * - Always use the LoadingStateManager to control loading states
+ * - Test that no loading indicators appear automatically on page load
+ */
+
+/* Custom styles for eConsultation AI */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Controlled loading animations - only applied when explicitly needed */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading spinner - only active when controlled by React state */
+.loading-spinner-active {
+  animation: spin 1s linear infinite;
+}
+
+/* Disabled by default - no automatic spinning */
+.animate-spin {
+  /* No animation by default - must use .loading-spinner-active */
+  animation: none !important;
+}
+
+/* Override Tailwind's default animations to prevent automatic animations */
+@layer utilities {
+  /* Disable all default Tailwind animations */
+  .animate-spin {
+    animation: none !important;
+  }
+  
+  .animate-pulse {
+    animation: none !important;
+  }
+  
+  .animate-bounce {
+    animation: none !important;
+  }
+  
+  /* Override custom Tailwind animations from config */
+  .animate-fade-in {
+    animation: none !important;
+  }
+  
+  .animate-slide-up {
+    animation: none !important;
+  }
+  
+  .animate-pulse-slow {
+    animation: none !important;
+  }
+  
+  /* Only allow animations when explicitly controlled by React state */
+  .animate-spin.loading-spinner-active {
+    animation: spin 1s linear infinite !important;
+  }
+  
+  .animate-pulse.loading-pulse-active {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
+  }
+  
+  .animate-bounce.loading-bounce-active {
+    animation: bounce 1s infinite !important;
+  }
+  
+  /* Controlled custom animations - only active when explicitly enabled */
+  .animate-fade-in.loading-fade-active {
+    animation: fadeIn 0.5s ease-in-out !important;
+  }
+  
+  .animate-slide-up.loading-slide-active {
+    animation: slideUp 0.3s ease-out !important;
+  }
+  
+  .animate-pulse-slow.loading-pulse-slow-active {
+    animation: pulse 3s infinite !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Controlled transitions - only applied to specific elements */
+/* Removed global transition to prevent unwanted loading-like visual effects */
+.controlled-transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Specific transitions for interactive elements */
+button {
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+input, textarea, select {
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Navigation transitions */
+nav button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Card hover effects - controlled transition */
+.card-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Controlled loading overlay - only shown when loading state is true */
+.loading-overlay-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Loading button state - only applied when explicitly controlled */
+.loading-button-active {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Loading text indicator - only shown when controlled by React state */
+.loading-text-active::after {
+  content: "...";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: ""; }
+  40% { content: "."; }
+  60% { content: ".."; }
+  80%, 100% { content: "..."; }
+}
+
+/* Status indicators */
+.status-positive {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.status-negative {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.status-neutral {
+  @apply bg-gray-100 text-gray-800 border-gray-200;
+}
+
+/* Controlled loading skeleton - only active when explicitly enabled */
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Loading skeleton - only active when controlled by React state */
+.loading-skeleton-active {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+/* Disabled by default - no automatic skeleton animation */
+.skeleton {
+  background: #f0f0f0;
+  /* No animation by default - must use .loading-skeleton-active */
+}
+
+/* Additional controlled loading states */
+.loading-shimmer-active {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 200% 100%;
+  animation: loading 1.2s infinite;
+}
+
+.loading-fade-active {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.loading-slide-active {
+  animation: slideUp 0.3s ease-out;
+}
+
+.loading-pulse-active {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loading-bounce-active {
+  animation: bounce 1s infinite;
+}
+
+/* Controlled loading states for form elements */
+.loading-input-active {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.loading-select-active {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.loading-textarea-active {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+  resize: none;
+}
+
+/* Prevent automatic loading-like visual effects */
+/* Override any global rules that might cause unwanted animations */
+* {
+  /* Ensure no global transitions cause loading-like effects */
+  /* transition: none; - Removed to prevent breaking intended transitions */
+}
+
+/* Prevent automatic transforms that might look like loading */
+*:not(.controlled-transition):not(button):not(input):not(textarea):not(select):not(nav button):not(.card-hover) {
+  /* Remove any inherited transforms that might cause loading-like effects */
+  transform: none !important;
+}
+
+/* Ensure no elements automatically animate on load */
+*:not(.loading-spinner-active):not(.loading-skeleton-active):not(.loading-shimmer-active):not(.loading-fade-active):not(.loading-slide-active):not(.loading-pulse-active):not(.loading-bounce-active) {
+  animation: none !important;
+}
+
+/* Prevent CSS-only loading indicators */
+.no-auto-animation {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Apply no-auto-animation to common elements that might auto-animate */
+div:not([class*="loading-"]):not(.controlled-transition):not(.card-hover),
+span:not([class*="loading-"]),
+p:not([class*="loading-"]),
+img:not([class*="loading-"]) {
+  animation: none !important;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Disable all animations in print */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
